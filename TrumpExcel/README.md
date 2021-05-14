@@ -1,4 +1,20 @@
 
 
 
-### Trump Excel Tutorials
+#### Trump Excel Tutorials
+
+
+##### MODULE 1 - EXCEL BASICS (for Beginners)
+
+##### Module 2 - EXCEL ESSENTIALS
+
+##### MODULE 3 - EXCEL FORMULAS
+
+##### MODULE 4 - DATA ANALYSIS
+
+##### MODULE 5 - INTRODUCTION TO EXCEL CHARTING
+
+##### MODULE 6 - PIVOT TABLE
+
+##### MODULE 6 - EXCEL EXTRAS
+
