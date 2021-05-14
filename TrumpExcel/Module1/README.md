@@ -11,3 +11,17 @@
    - Customizing ribbons and QAT,
    - What is an active cell
    - How to use ALT shortcuts
+
+
+#### Lesson2 - Data Entry, Data Editing, Data Formatting
+
+   - Data Entry
+   - Modifying cell content
+      - Deleting Data
+      - Editing Data
+      - Replacing Data
+   - Introduction to Autofill
+   - Introduction to Number formatting
+   
+   
+ 
