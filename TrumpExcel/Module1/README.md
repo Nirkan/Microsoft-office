@@ -22,6 +22,19 @@
       - Replacing Data
    - Introduction to Autofill
    - Introduction to Number formatting
+
+
+
+#### Lesson3 - Data Formatting Tools
+
+   - Acessing Formatting Tools
+   - Formatting Tools
+      - Alignment
+      - Font
+      - Borders
+      - Color and Shading
+   - Format Painter
+   - Named Styles
    
    
  
