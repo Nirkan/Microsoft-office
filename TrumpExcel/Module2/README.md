@@ -12,3 +12,10 @@
      - Autofill
      - Custom Lists
      - Flash Fill
+
+
+### Lesson 8 - Number Formatting
+
+     - How to access number formatting options
+     - Using number formatting options using a dialog box
+     - Using custom number formatting
