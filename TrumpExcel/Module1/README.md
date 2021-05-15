@@ -48,3 +48,16 @@
    - Using find and replace to select cells.
    - Adding comments.
    - Quick Analysis.
+
+
+#### Lesson5 - Managing Worksheets
+
+   - Navigating through worksheets
+   - Changing worksheet name and color
+   - Adding/Deleting and Hiding/Unding worksheets
+   - Moving and copying worksheets
+   - Worksheets views
+      - Comparing side by side
+      - Splitting worksheet into panes
+      - Freezing panes
+   - Saving and Opening workbooks
