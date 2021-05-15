@@ -64,3 +64,19 @@
   - RANK function
   - MAX function
   - MIN function
+
+
+#### Lesson 14 - Text formulas in Excel
+
+
+   - LEFT function
+   - RIGHT function
+   - MID function
+   - LEN function
+   - LOWER function
+   - PROPER function
+   - UPPER function
+   - FIND function
+   - REPLACE function
+   - SUBSTITUTE function
+   - TEXT function
