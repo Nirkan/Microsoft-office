@@ -47,3 +47,20 @@
   - ROWS function
   - COLUMN function
   - COLUMNS function
+
+
+#### Lesson 13 - Stats formulas in Excel
+
+  - AVERAGE function
+  - AVERAGEIF function
+  - AVERAGEIFS function
+  - COUNT function
+  - COUNTA function
+  - COUNTBLANK function
+  - COUNTIF function
+  - COUNTIFS function
+  - LARGE function
+  - SMALL function
+  - RANK function
+  - MAX function
+  - MIN function
