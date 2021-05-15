@@ -80,3 +80,19 @@
    - REPLACE function
    - SUBSTITUTE function
    - TEXT function
+
+
+#### Lesson 15 - Date and Time Formulas in Excel
+
+   - DAY function
+   - HOUR function
+   - MINUTE function
+   - DATE function
+   - DATEVALUE function
+   - TODAY function
+   - NOW function
+   - WEEKDAY function
+   - NETWROKDAYS function
+   - NETWORKDAYS.INTL function
+   - WORKDAY function
+   - WORKDAY.INTL function
