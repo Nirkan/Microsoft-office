@@ -20,3 +20,16 @@
   - IF function
   - IFERROR function
   - IS function
+
+
+#### Lesson 11 - Math Formulas in Excel
+
+  - INT function
+  - MOD function
+  - RAND function
+  - RANDBETWEEN function
+  - ROUND function
+  - SUM function
+  - SUMIF function
+  - SUMIFS function
+  - SUMPRODUCT function
