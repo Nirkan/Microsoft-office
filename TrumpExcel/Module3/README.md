@@ -33,3 +33,17 @@
   - SUMIF function
   - SUMIFS function
   - SUMPRODUCT function
+
+
+#### Lesson 12 - Lookup and Reference Formula in Excel
+
+  - VLOOKUP function
+  - HLOOKUP function
+  - INDEX function
+  - MATCH function
+  - OFFSET function
+  - INDIRECT function
+  - ROW function
+  - ROWS function
+  - COLUMN function
+  - COLUMNS function
