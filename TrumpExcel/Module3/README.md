@@ -8,3 +8,15 @@
   - Absolute/relative cell references
   - Copying/pasting formulas in Excel, and
   - Formula auditing and debugging
+
+
+#### Lesson 10 - Logical Formulas in Excel
+
+  - AND function
+  - OR function
+  - NOT function
+  - TRUE function
+  - FALSE function
+  - IF function
+  - IFERROR function
+  - IS function
