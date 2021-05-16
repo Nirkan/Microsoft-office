@@ -11,3 +11,12 @@
         - Make Sub Headings in Validation, 
         - Disguise Numbers as Text, 
         - Creating Dynamic Drop Down List)
+
+
+#### Lesson 19 - Data Sorting and Filtering
+
+    - Data Sorting
+    - Multi-Levels of Sorting
+    - Data Filtering
+    - Advanced Filtering
+    - Filtering and Sorting in Excel Data Tables
