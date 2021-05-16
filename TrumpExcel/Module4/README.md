@@ -27,3 +27,12 @@
     - Introduction to Conditional Formatting
     - Using Formula in Conditional Formatting
     - Advanced Examples (Highlight Every Nth Row, Creating Dynamic Search)
+
+
+#### Lesson 21 - Introduction to Excel Charting
+
+    - Excel Chart Types
+    - Chart Editing
+    - Formatting Chart Elements
+    - Combination Charts
+    - Handling Gaps in Charts
