@@ -20,3 +20,10 @@
     - Data Filtering
     - Advanced Filtering
     - Filtering and Sorting in Excel Data Tables
+
+
+#### Lesson 20 - Using Conditional Formatting in Excel
+
+    - Introduction to Conditional Formatting
+    - Using Formula in Conditional Formatting
+    - Advanced Examples (Highlight Every Nth Row, Creating Dynamic Search)
