@@ -1,0 +1,109 @@
+
+Sub FormatData()
+
+'
+'
+' FormatData Macro
+'
+
+	Rows("1:1").Insert
+	Range("A1").Value = "Emp ID"
+	Range("B1").Value = "Last Name"
+	Range("C1").Value = "First Name"
+	Rows("1:1").Font.Bold = True
+	Range("A1").Select
+
+
+End Sub
+
+
+
+
+' Selecting cell C3 in different ways.
+
+[C3].select
+Range("A1").Offset(2,2).Select
+Range("B2").Range("B2").select
+Range("C3").select
+
+
+' Referencing of the selected cell
+
+Range("C3").Select
+Selection.Value = "Hellow World"
+Selection.Interior.Color = 65535
+Selection.Interior.ThemeColor = xlThemeColorDark2
+Selection.Interior.Color = RGB(0,0,255)
+Selection.Font.Bold = True
+Selection.Font.Color = vbWhite
+
+
+' Inserting values to the cells
+
+Range("a1").Value = "Hello World"
+Range("a1").Clear
+Selection.value = "Hellow World"
+Selection.clear
+
+
+' Active sheets
+
+ActiveSheet.Name = "portfolio4"
+Sheets("Sheet1").Select
+
+
+' Create Module - Create Procedure
+
+' Current Region property : Ctr + A to select current filled region.
+
+Selection.CurrentRegion.Select
+
+
+' Exercise : Create Macro InsertTxt
+
+Sub InsertTxt()
+
+	Range("A1").value = "Our Global Company"
+	Range("A2").value = "Stock Prices"
+	Range("B4").value = ActiveSheet.Name & "Portfolio"
+	Range("B6").value = "Symbol"
+	Range("C6").value = "Open"
+	Range("D6").value = "Close"
+	Range("E6").value = "Net Change"
+
+End Sub
+
+
+Sub FormatTxt()
+
+	Range("A1").Font.size = 20
+	Range("A1").Font.Bold = True
+	Range("A2").Font.size = 18
+	Range("A2").Font.Bold = True
+	Range("B4").Font.size = 14
+	Range("B4").Font.Bold = True
+	Range("B6").Font.size = 12
+	Range("B6").Font.Bold = True
+	Range("C6").Font.size = 12
+	Range("C6").Font.Bold = True
+	Range("D6").Font.size = 12
+	Range("D6").Font.Bold = True
+	Range("E6").Font.size = 12
+	Range("E6").Font.Bold = True
+
+
+End Sub
+
+
+PUblic Sub FormatList()
+	
+	Range("B6").CurrentRegion.Select
+	Selection.Interior.ThemeColor = xlThemeColorDark2
+
+End Sub
+
+
+
+
+
+
