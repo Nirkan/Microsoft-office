@@ -1,0 +1,262 @@
+
+worksheets.Name
+worksheets.Add
+worksheets(1).Select
+Worksheets("Number Two").select
+Worksheets(3).name = "Something Else"
+Worksheets(1).Delete
+
+
+
+PUblic Sub DatesinThisMonth()
+
+Dim x as integer
+Dim MonthValue as Integer
+Dim YearValue as Integer
+
+MonthValue = Range("B5").Value
+YearValue = Range("C5").Value
+
+For x = 1 to 30
+Range("D" & 4 + x).value = DateSerial(YearValue, MonthValue, x)
+
+Next x
+
+End Sub
+
+
+
+
+Public sub FormatasLong()
+
+Dim x as integer
+Dim DateValue as Date
+
+
+For x  = 1 to 30
+DateValue = Range("D" & 4 + x).Value 
+Range("D" &  4 + x) = Format(DateValue, "Long Date")
+
+Next x
+
+End Sub
+
+
+
+Sub RenameSheets()
+
+
+Dim x As Integer
+
+For x = 1 To 12
+
+	Worksheets(1).Copy After:=worksheet(x)
+	Worksheets(x+1) = Format(DateSerial(1,x,1),"mmmm")
+
+Next x
+
+Worksheets(1).Delete
+
+End Sub
+
+
+
+Sub SEMove()
+
+Worksheets("SE Sales").Move Before:=Worksheets(1)
+Worksheets("SE Marketing").Move Before:=Worksheets(1)
+Worksheets("SE Clients").Move Before:=Worksheets(1)
+Worksheets("SE Teams").Move Before"=Worksheets(1)
+
+
+End Sub
+
+
+
+Sub PrintAllsheets()
+
+worksheets.printout
+
+
+End Sub
+
+
+
+
+Sub MoveCopyPrintDivisionQuater()
+
+call MovebyInput
+Call CreateQuaterlyLog
+Call DuplicateMonthlyLog
+call PrintTeamQuater
+
+
+End Sub
+
+
+Sub MovebyInput()
+
+Dim message as sTring
+Dim Region, YNAnswer as Integer
+
+Message = "Enter the region of your choice:" & vbCrLf & _
+"1 - southeast" & vbCrLf & _
+"2 - Northeast" & vbCrLf & _ 
+"3 - Mid-west" & vbCrLf & _
+"4 - southwest" & vbCrLf & _ 
+"5 - Northwest" & vbCrLf & _
+"6 - Far-west" & vbCrLf & _ 
+
+Region = InputBox("Message","Region","Enter 1,2,3,4,5,6")
+
+Select Case Region
+	Case 1
+		Call SEMove
+	Case 2
+		Call NEMove
+	Case 3
+		Call MWMove
+	Case 4
+		Call SWMove
+	Case 5
+		Call NWMove
+	Case 6
+		Call FWMove
+	Case Else
+		YNAnswer = MsgBox("You did not type number between 1 and 6.)
+		If YNAnswer = vbYes Then
+			call MovebyInput
+		End if
+	End Select
+
+End sub
+
+
+Sub CreatequaterlyLog()
+
+Range("A2000").End(xlUp).Select
+Selection.Offset(3,0).Select
+
+Selection.Value = "LOG"
+With selection.Font
+	.Size = 17
+	.bold = True
+End With
+
+Selection.Offset(1,0).Select
+selection.Value = "client Name"
+selection.Font.Bold = True
+
+Selection.offset(0,1).select
+selection.Value = "Contact Name"
+Selection.Font.Bold = True
+
+Selection.offset(0,1).select
+selection.Value = "Date"
+Selection.Font.Bold = True
+
+Selection.offset(0,1).select
+selection.Value = "Duartion"
+Selection.Font.Bold = True
+
+Selection.offset(0,1).select
+selection.Value = "Notes:"
+Selection.Font.Bold = True
+
+
+End Sub
+
+
+
+Sub DuplicateMonthlyLog()
+
+Dim QuaterSelect, y as Integer
+
+QuaterSelect = InputBox("Which Quater is this for?")
+
+Select Case QuaterSelect
+	Case 1
+		QuaterSelect = 1
+	Case 2
+		QuaterSelect = 4
+	Case 3 
+		QuaterSelect = 7
+	Case 4 
+		QuaterSelect = 10
+	Case Else
+		UNAnswer = MsgBox("You did not enter a valid quater number.")
+		If YNAnswer = vbYes Then
+			Call DuplicateMonthlyLog
+		End if
+End Select
+
+For y = 1 to 3 
+
+Worksheets(1).Copy After:=worksheets(y)
+worksheets(y+1).Name = Format(DateSerial(1,QuaterSelect + y - 1, 1), "MMMM")
+
+Next y 
+
+
+
+End Sub
+
+
+
+
+
+Sub PrintTeamQuater()
+
+
+Worksheets(2).PrintOut
+Worksheets(3).Printout
+Worksheets(4).Printout
+
+End Sub
+
+
+
+
+
+' User Defined Functions
+
+' Procedure - Function procedure
+
+
+Public Function costForGas(MilesofStretch as Double, MilesPerGallon as Double, LocalgallonCost as Double)
+
+
+CostForGas = MilesofStretch / MilesPerGallon * LocalgallonCost
+
+
+End Function
+
+
+
+
+Public Function PercentChangeOvertime(Current as double, Previous as double)
+
+
+PercentChangeOverTime = (Current - Previous)/ Previous
+
+End Function
+
+
+
+
+Public Function HouseSurfaceArea(HeightHouse as Double, DepthHouse as double,DepthHOuse as Double, Heighroof as Double)
+
+Sides = HeightHouse * DepthHouse * 2
+FrontAndBack = ((HeightHouse*widthHouse) + (HeightRoof*widthHouse)/2)*2
+RoofSlant = Sqr((HeighRoof * HeightRoof) + (WidthHouse/2 + WidthHouse/2))
+
+Roof = RoofSlant * DepthHOuse * 2
+
+HouseSurfaceArea = FrontandBack + Sides + Roof
+
+End Function
+
+
+
+
+
