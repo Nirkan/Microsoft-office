@@ -1,0 +1,490 @@
+
+Sub NumberVariable()
+
+	' Declare a Integer Variable
+	Dim aNumber As Integer
+
+	' Give it a Value
+	aNumber = 2
+
+	'Then use that value later on
+	Range("A5").Value = aNumber
+
+
+End Sub
+
+
+Sub DateVariable()
+
+
+	Dim aDate As Date
+
+	aDate = Range("E1").Value
+
+	Range("A5").Value = aDate
+
+
+End Sub
+
+
+
+
+Sub StringVariable()
+
+	Dim aProduct as String
+
+	aProduct = Range("G3").Value	
+
+	Range("B5").Value = aProduct
+
+End Sub
+
+
+
+' Looping in VBA 
+
+
+Public Sub ForNext()
+
+	Dim x as Integer
+
+	For x = 1 to 10 then
+
+	Cells(x,1).Value = 100
+
+	Next
+
+End Sub
+
+
+Public Sub ForNext2()
+
+	Dim x as Integer
+
+	For x = 1 to 10 then
+
+	Cells(x,x).Value = 100
+
+	Next
+
+End Sub
+
+
+
+Public Sub DoubleForNext()
+
+	Dim intCol as Integer
+	Dim intRow as Integer
+
+	For intcol = 1 to 3 then
+	For intRow = 1 to 10
+	Cells(intCol,intRow).Value = "WOW!"
+	Next intRow
+	Next intcol
+
+End Sub
+
+
+
+Public Sub TripleForNext()
+
+Dim intCol as Integer
+Dim intRow as Integer
+Dim intSheet as Integer
+
+For intSheet = 3 to 5
+for intCol = 1 to 3
+for intRow = 1 to 10
+
+worksheets(intsheet).Cells(intRow, intCol).value = "Neat!"
+
+Next intRow
+Next intCol
+Next intSheet
+
+
+End Sub
+
+
+
+' For Each LOOP
+
+PUblic Sub ExForEach()
+
+Dim x as Worksheet
+
+for each x in Worksheets
+MsgBox "Found Worksheet: " & x.Name
+Next x
+
+
+End Sub
+
+
+
+Public Sub ExitForExample()
+
+Dim x as Integer
+
+For x = 1 to 50
+
+Range("B" & x).select
+
+If range("B" & x).Value = "Stop" Then
+
+	Exit For
+
+ElseIf Range("B" & x).Value = "Infor" Then
+
+	Range("B" & x).value = "Info"
+
+End if
+
+End Sub
+
+
+
+Public Sub ExampleDoWhileLoop()
+
+Dim x as Integer
+
+x = 1
+
+Do while x < 10
+cells(x,1).Value = "Cool!"
+x = x + 1
+Loop
+
+End Sub
+
+
+
+
+Public Sub ExampleDoWhileCalcLoop()
+
+Dim x as Integer
+x = 5
+
+Do while cells(x,1).VAlue <> ""
+Cells(x,3).Value = Cells(x,2).Value + 30
+x = x + 1
+Loop
+
+End Sub
+
+
+
+Public sub DoUntilLoopEx()
+
+Dim intRow as Integer
+
+intRow = 1
+
+Do Until isEmpty(Cells(intRow,1))
+
+Cells(intRow, 1).Value = "Info"
+intRow = intRow + 1
+Loop
+
+End Sub
+
+
+
+Public Sub DoLoopUNTIL()
+
+Dim x As Integer
+
+x = 1
+
+Do 
+
+cells(x,1).Value = "Info"
+x = x + 1
+
+Loop Until isEmpty(Cells(x,1))
+
+End Sub
+
+
+' Offset in VBA
+
+Selection.copy
+Selection.Offset(1,0).Select
+ActiveSheet.PasteSpecial
+
+
+
+Public Sub YouTry()
+
+Dim x as Integer
+Dim sheettitle as string
+
+For x = 1 to worksheets.Count-1
+
+Worksheets(x).Select
+sheettitle = activesheet.name
+Worksheets("P&L").Select
+
+Range("A1").select
+selection.offset(x*5+2,0).select
+selection.value = sheettitle
+selection.Font.Bold = true
+
+Worksheets(x).Select 
+Range("A1").Select
+selection.currentRegion.Copy
+sheets("P&L").Select
+
+ActiveCell.Offset(1,0).select
+Activesheet.Paste
+
+Next x
+
+Rows("3:6").Delete
+
+
+End Sub
+
+
+
+Public Sub AllMacros()
+
+Call FindData
+Call CopyPasteinA4
+Call InsHeaders
+
+End Sub
+
+
+Sub FindData()
+
+Dim datastart As String
+
+Range("A1").Select
+Selection.End(xlDown).select
+datastart = ActiveCell.Address
+Range(datastart).select
+
+
+End sub
+
+
+
+Sub GenRep()
+
+Dim x as Integer
+
+For x = 1 to Worksheets.Count - 1
+
+worksheets(x).Select
+Call SortLastCol
+Call InsColRow
+Call InsertTxt
+Call FmtTxt
+
+Range("B6").Select
+Selection.CurrentRegion.Select
+Selection.Copy
+
+Worksheets("All Portfolios").Select
+
+Range("B2000").Select
+Selection.End(xlUP).Select
+ActiveCell.offse(2,0).select
+ActiveCell.Value = Worksheets(x).Name & "Portfolio"
+ActiveCell.Offset(2,0).select
+ActiveSheet.Paste
+
+Next x
+
+call FindFormatPortHeaders
+
+columns("B:E").select
+selection.columns.AutoFit
+
+End Sub
+
+
+
+Sub FindFormatPortHeaders()
+
+Dim FoudnCellAddress as String
+Range("B4").Select
+FoundCellAddress = ActiveCell.Address
+
+	Cells.find(what:="portfolio").activate
+
+	Do
+		With selection.Font
+			.Name = "Arial"
+			.Size = 14
+			.bold = True
+
+		End with
+	
+		Cells.Find(After:=ActiveCell).Activate
+	
+	Loop while FoundCellAddress <> ActiveCell.Address
+
+End Sub
+
+
+
+' Message Boxes and Input Boxes
+
+
+MsgBox "Hello World!"
+
+MsgBox "Hello World!", vbYesNOCancel
+
+
+
+
+Public Sub Testing123()
+
+Dim inputreceived As Integer
+
+Inputreceived = MsgBox("Would you like to download the sunshine virus?", vbYesNo, "It's a beautiful day.")
+
+If inputreceived = vbYes Then
+MsgBox "Go Play in the Sunshine!"
+Else: MsgBox "Well don't work too hard"
+End if
+
+End sub
+
+
+
+Public  Sub Testing789()
+
+Dim strResponse as string
+
+strResponse = Inputbox ("what would you like to name this sheet ?","Name the sheet."
+
+ActiveSheet.Name = strResponse
+
+
+End Sub
+
+
+
+Public  Sub Testing456()
+
+Dim strResponse as Integer
+
+strResponse = Inputbox ("would you like to downlaod the sunshine virus?",_
+vbYesNO, "Its a Beautiful Day!")
+
+If intResponse = vbYes Then
+MsgBox "Wonderful!" & vbCrLf & " Go Play in the sunshine!"
+
+If intResponse = vbNo Then
+MsgBox "Ok then, don't work Too hard, though"
+
+End If
+
+
+End Sub
+
+
+
+
+
+Public Sub Testing012()
+
+Dim strResponse as string
+
+strResponse = IntputBox ("which dwarf if your favourite.")
+
+If strResponse  = "Grumpy" Then
+	MsgBox "I knew you were cool"
+ElseIf strResponse = "Happy" Then
+	MsgBox "What a positive outlook"
+ElseIf strResponse = "Doc" Then
+	MsgBox "Hope its fine."
+ElseIf strResponse = "Weezy" Then
+	MsgBox "Hope its fine."
+ElseIf strResponse = "Sleepy" Then
+	MsgBox "Hope its fine."
+ElseIf strResponse = "Dopey" Then
+	MsgBox "Hope its fine."
+Else: MsgBox "Its just weird."
+End If
+
+End Sub
+
+
+
+Public sub Testing234()
+
+Dim strResponse As String
+
+strResponse = InputBox("which dwarf if your favourite.")
+
+Select Case strResponse
+	Case "Grumpy"
+		MsgBox "Cool"
+	Case "doppy"
+		MsgBox "Cool"
+	Case "Doc"
+		MsgBox "Cool"
+	Case Else
+		Msgbox "Hmm, Interesting"
+
+End Select
+
+End Sub
+
+
+
+
+Sub ProblemProduct()
+
+
+
+
+End Sub
+
+
+
+
+Sub SortBy()
+
+Dim Message, TitleBarTxt, DefaultTxt, SortVal as String
+Dim YNAnswer as Integer
+
+Message = "Enter a number to sort by the following fields:" & vbCrLf & _
+"1  - By Date and Time" & vbCrLf & _
+"2  - By Customer Service Rep, Date & Time"
+
+TitleVarTxt = "Sort Call Center Log"
+DefaultTxt = "Enter 1 or 2"
+
+
+SortVal = InputBox (Message, TitleBarTxt, DefaultTxt) 
+
+
+Select Case SortVal
+	Case "1"
+		Call DateThenTime
+	Case "2"
+		Call RepSort
+	Case Else
+		YNAnswer = MsgBox("You didn't type 1 or 2. Try Again ?", vbYesNO)
+		If YNAnswer = vbYes Then
+			Call SortBy
+		End If
+End Select
+
+
+End Sub
+
+
+
+
+
+
+
+
+
+
